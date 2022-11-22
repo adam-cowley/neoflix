@@ -1,0 +1,12 @@
+{
+  "name": "neoflix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "corepack pnpm --filter ./packages dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

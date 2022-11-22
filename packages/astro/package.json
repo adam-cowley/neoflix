@@ -1,0 +1,23 @@
+{
+  "name": "@neoflix/astro",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^1.2.2",
+    "@neoflix/core": "*",
+    "@neoflix/ui": "*",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.9",
+    "astro": "^1.6.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
