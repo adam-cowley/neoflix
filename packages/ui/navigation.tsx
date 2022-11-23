@@ -7,20 +7,16 @@ interface NavigationProps {
 }
 
 function UserMenu({ user }: NavigationProps) {
-    const greeting = `Hello, ${user.name}`
+    const greeting = `Hello, ${user!.name}`
 
     return (
         <div className="header__actions">
-            {/* <router-link :to="{ name: 'Favorites' }" className="header__user"> */}
             <a href="#" className="header__user">
                 <span>{greeting}</span>
             </a>
-            {/* </router-link> */}
-            {/* <router-link :to="{ name: 'Logout' }" className="header__register"> */}
             <a href="#" className="header__register">
                 <span>Sign Out</span>
             </a>
-            {/* </router-link> */}
         </div >
     )
 }
@@ -28,16 +24,12 @@ function UserMenu({ user }: NavigationProps) {
 function AnonymousMenu() {
     return (
         <div className="header__actions">
-            {/* <router-link :to="{ name: 'Login' }" className="header__user"> */}
             <a href="#" className="header__user">
                 <span>Sign in</span>
-                {/* </router-link> */}
             </a>
 
-            {/* <router-link :to="{ name: 'Register' }" className="header__register"> */}
             <a href="#" className="header__register">
                 <span>Register</span>
-                {/* </router-link> */}
             </a>
         </div >
     )
@@ -66,35 +58,31 @@ export default function Navigation({ user }: NavigationProps) {
                                 <Logo />
                             </div>
 
-                            {/* <router-link :to="{ name: 'Home' }" className="header__logo">
-
-                            </router-link> */}
-
                             <ul className={`header__nav ${menu ? 'header__nav--active' : ''}`}>
                                 <li className="header__nav-item">
-                                    {/* <router-link className="header__nav-link" :to="{ name: 'GenreList' }"> */}
-                                    Genres
-                                    {/* </router-link> */}
+                                    <a href="#" className="header__nav-link">
+                                        Genres
+                                    </a>
                                 </li>
                                 <li className="header__nav-item">
-                                    {/* <router-link className="header__nav-link" :to="{ name: 'PeopleList' }"> */}
-                                    People
-                                    {/* </router-link> */}
+                                    <a href="#" className="header__nav-link">
+                                        People
+                                    </a>
                                 </li>
                                 <li className="header__nav-item">
-                                    {/* <router-link className="header__nav-link" :to="{ name: 'PopularMovies' }"> */}
-                                    Popular Movies
-                                    {/* </router-link> */}
+                                    <a href="#" className="header__nav-link">
+                                        Popular Movies
+                                    </a>
                                 </li>
                                 <li className="header__nav-item">
-                                    {/* <router-link className="header__nav-link" :to="{ name: 'LatestMovies' }"> */}
-                                    Latest Releases
-                                    {/* </router-link> */}
+                                    <a href="#" className="header__nav-link">
+                                        Latest Releases
+                                    </a>
                                 </li>
                                 <li className="header__nav-item">
-                                    {/* <router-link className="header__nav-link" :to="{ name: 'Favorites' }"> */}
-                                    My Favorites
-                                    {/* </router-link> */}
+                                    <a href="#" className="header__nav-link">
+                                        My Favorites
+                                    </a>
                                 </li >
                             </ul >
 

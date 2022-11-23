@@ -1,26 +1,15 @@
-import User from '@neoflix/core/auth/user'
-
-interface GridItem {
-    poster: string;
-    title: string;
-    tags: {
-        text: string;
-        link?: string;
-    }[]
-    user: User;
-    favorite: boolean;
-}
+import GridItem, { GridItemProps } from './item';
 
 interface GridProps {
-    items: GridItem[];
-    children?: React.ReactNode;
+    items: GridItemProps[];
+    children?: React.ReactElement;
 }
 
 export default function Grid({ items, children }: GridProps) {
-
     return (
         <div className="col-12">
             <div className="row row--grid">
+                {items?.map(item => <GridItem key={item.id} {...item} />)}
                 {children}
             </div>
         </div>

@@ -2,10 +2,43 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '@neoflix/ui/hero'
 import Section from '@neoflix/ui/section'
+import Grid from '@neoflix/ui/grid'
+
+import { all } from '@neoflix/core/movies'
+import type { GridItemProps } from '@neoflix/ui/grid/item';
+import type { Movie } from '@neoflix/core/movies/movie';
+import GridItem from '@neoflix/ui/grid/item';
+
+import FavoriteToggle from '../components/FavoriteToggle';
+
+// TODO: Get user from astro-auth
+const user = {
+	id: '1',
+	name: 'Adam',
+	email: 'adam@graphacademy.com'
+}
+
+const convertMovieToGridItem = (movie: Movie) => ({
+	id: movie.tmdbId,
+	link: `/movies/${movie.tmdbId}`,
+	poster: movie.poster || '/img/poster-placeholder.png',
+	title: movie.title,
+	tags: movie.languages?.map((language: string) => ({ text: language, })) || [],
+	rating: movie.imdbRating,
+	favorite: movie.favorite,
+	user,
+})
+
+const popular: GridItemProps[] = (await all('imdbRating', 'DESC', 6, 0, user.id))
+	.map(movie => convertMovieToGridItem(movie))
+
+const latest = (await all('released', 'DESC', 6, 0, user.id))
+	.map(movie => convertMovieToGridItem(movie))
+
 
 ---
 
-<Layout title="Neoflix - Graph Powered Movie Recommendations">
+<Layout title="Neoflix - Graph Powered Movie Recommendations" user={user}>
 	<main>
 		<Hero
 			title="Graph Powered Movie Recommendations"
@@ -19,11 +52,25 @@ import Section from '@neoflix/ui/section'
 		</Hero>
 
 		<Section title="Most Popular Movies">
-			hi
+			<Grid>
+				{popular.map(item => <GridItem {...item}>
+					<FavoriteToggle client:load {...item} user={user} />
+				</GridItem>)}
+			</Grid>
 		</Section>
 
 		<Section title="Latest Releases">
-			hi
+			<Grid>
+				{latest.map(item => <GridItem {...item}>
+					<FavoriteToggle client:load {...item} user={user} />
+				</GridItem>)}
+			</Grid>
 		</Section>
+
+		<!-- <Section title="Latest Releases">
+			<Grid
+				items={latest}
+			/>
+		</Section> -->
 	</main>
 </Layout>

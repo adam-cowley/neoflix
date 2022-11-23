@@ -2,6 +2,7 @@
   "name": "@neoflix/core",
   "version": "0.1.0",
   "description": "Core functionality to be included with each build",
+  "type": "module",
   "main": "index.ts",
   "scripts": {
     "dev": "tsc --watch",
