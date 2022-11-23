@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "corepack pnpm --filter ./packages dev"
+    "astro": "corepack pnpm --filter ./apps/astro dev"
   },
   "keywords": [],
   "author": "",

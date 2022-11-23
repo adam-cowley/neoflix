@@ -70,15 +70,15 @@ export async function add(userId: string, movieId: string) {
     const res = await session.executeWrite(
         tx => tx.run(
             `
-          MATCH (u:User {userId: $userId})
-          MATCH (m:Movie {tmdbId: $movieId})
-          MERGE (u)-[r:HAS_FAVORITE]->(m)
-          ON CREATE SET u.createdAt = datetime()
-          RETURN m {
-            .*,
-            favorite: true
-          } AS movie
-        `,
+            MATCH (u:User {userId: $userId})
+            MATCH (m:Movie {tmdbId: $movieId})
+            MERGE (u)-[r:HAS_FAVORITE]->(m)
+            ON CREATE SET u.createdAt = datetime()
+            RETURN m {
+                .*,
+                favorite: true
+            } AS movie
+            `,
             { userId, movieId, }
         )
     )
