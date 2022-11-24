@@ -37,16 +37,18 @@ export async function all(sort = 'title', order = 'ASC', limit = 6, skip = 0, us
 
             return tx.run<{ movie: Movie }>(
                 `
-            MATCH (m:Movie)
-            WHERE m.\`${sort}\` IS NOT NULL
-            RETURN m {
-              .*,
-              favorite: m.tmdbId IN $favorites
-            } AS movie
-            ORDER BY m.\`${sort}\` ${order}
-            SKIP $skip
-            LIMIT $limit
-          `, { skip: int(skip), limit: int(limit), favorites })
+                    MATCH (m:Movie)
+                    WHERE m.\`${sort}\` IS NOT NULL
+                    RETURN m {
+                        .*,
+                        favorite: m.tmdbId IN $favorites
+                    } AS movie
+                    ORDER BY m.\`${sort}\` ${order}
+                    SKIP $skip
+                    LIMIT $limit
+                `,
+                { skip: int(skip), limit: int(limit), favorites }
+            )
         }
     )
     // end::allcypher[]
@@ -65,3 +67,5 @@ export async function all(sort = 'title', order = 'ASC', limit = 6, skip = 0, us
     return movies
     // end::return[]
 }
+
+export { Movie }

@@ -1,11 +1,14 @@
 import neo4j, { Driver, Session, SessionMode } from "neo4j-driver";
 
+// @ts-ignore
+const env = import.meta.hasOwnProperty('env') ? import.meta.env : process.env
+
 // Environment variables?
 const {
     NEO4J_URI,
     NEO4J_USERNAME,
     NEO4J_PASSWORD,
-} = import.meta.env
+} = env
 
 //  Cached driver instance
 let cachedDriver: Driver

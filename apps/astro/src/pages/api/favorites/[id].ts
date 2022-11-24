@@ -37,7 +37,7 @@ export const del: APIRoute = async ({ params, request }) => {
         const result = await remove(userId, id as string)
 
         return {
-            status: 201,
+            status: 202,
             body: JSON.stringify({
                 status: 'OK',
                 ...result,

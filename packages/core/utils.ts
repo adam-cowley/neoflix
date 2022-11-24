@@ -1,4 +1,5 @@
 import { isDate, isDateTime, isDuration, isInt, isLocalDateTime, isLocalTime, isTime } from "neo4j-driver"
+import { Movie } from "./movies/movie"
 
 // tag::toNativeTypes[]
 /**
@@ -40,6 +41,9 @@ function valueToNativeType(value: any) {
     }
     else if (typeof value === 'object' && value !== undefined && value !== null) {
         value = toNativeTypes(value)
+    }
+    else if (value === undefined) {
+        value = null
     }
 
     return value

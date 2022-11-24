@@ -1739,7 +1739,7 @@ body::-webkit-scrollbar-thumb {
   top: 0;
   height: 22px;
   width: 34px;
-  background: url("../img/breadcrumb.svg") no-repeat center/12px auto;
+  /* background: url("../img/breadcrumb.svg") no-repeat center/12px auto; */
 }
 .breadcrumb__item:hover {
   color: #e0e0e0;
