@@ -12,8 +12,8 @@
     "next": "13.0.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "@neoflix/core": "workspace:*",
-    "@neoflix/ui": "workspace:*"
+    "@neoflix/core": "*",
+    "@neoflix/ui": "*"
   },
   "devDependencies": {
     "@types/node": "18.11.9",

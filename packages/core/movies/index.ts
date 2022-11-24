@@ -1,4 +1,5 @@
-import { int, ManagedTransaction } from "neo4j-driver"
+import { int } from "neo4j-driver"
+import type { ManagedTransaction } from "neo4j-driver"
 import { openSession } from "../neo4j"
 import { toNativeTypes } from "../utils"
 import { Movie } from "./movie"

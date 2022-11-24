@@ -1,6 +1,6 @@
 # Neo4j & your favorite React framework
 
-Frameworks:
+Neo4j examples for popular frameworks:
 
 * [Astro](apps/astro)
 * [Next.js](apps/next)
