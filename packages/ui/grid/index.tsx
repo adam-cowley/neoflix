@@ -1,8 +1,9 @@
+import React from 'react'
 import GridItem, { GridItemProps } from './item';
 
 interface GridProps {
-    items: GridItemProps[];
-    children?: React.ReactElement;
+    items?: GridItemProps[];
+    children?: React.ReactNode;
 }
 
 export default function Grid({ items, children }: GridProps) {

@@ -1,3 +1,5 @@
+import React from 'react'
+
 interface SectionProps {
     title: string;
     background?: string;

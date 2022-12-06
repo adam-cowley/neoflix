@@ -1,3 +1,4 @@
+import React from 'react'
 import BookmarkIcon from "../icons/bookmark";
 
 interface FavoriteProps {

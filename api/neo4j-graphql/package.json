@@ -1,0 +1,23 @@
+{
+  "name": "@neoflix/neo4j-graphql",
+  "version": "0.1.0",
+  "description": "GraphQL API for the recommendations dataset",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "nodemon -e ts --exec ts-node src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "neo4j",
+    "graphql"
+  ],
+  "author": "Adam Cowley <adam+github@neo4j.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@neo4j/graphql": "^3.13.0",
+    "apollo-server": "^3.11.1",
+    "dotenv": "^16.0.3",
+    "graphql": "^16.6.0",
+    "neo4j-driver": "^5.3.0"
+  }
+}

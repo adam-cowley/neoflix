@@ -15,6 +15,5 @@ export interface Movie {
     revenue: number;
     plot: string;
     budget: number;
-
     favorite?: boolean;
 }

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useState } from "react"
 import User from '@neoflix/core/auth/user'
 import Logo from './images/logo'
 
@@ -36,7 +36,8 @@ function AnonymousMenu() {
 }
 
 export default function Navigation({ user }: NavigationProps) {
-    const [menu, toggleMenu] = useState<boolean>(false)
+    // TODO: Error in react-apollo: TypeError: Cannot read properties of null (reading 'useState')
+    const [menu, toggleMenu] = [false, (value: boolean) => { }]  // useState<boolean>(false)
 
     return (
         <header className={`header header--static ${menu ? 'header--menu' : ''}`}>

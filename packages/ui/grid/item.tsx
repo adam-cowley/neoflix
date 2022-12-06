@@ -42,7 +42,7 @@ export default function GridItem({
         <div className="col-6 col-sm-4 col-lg-3 col-xl-2">
             <div className={cardClasses}>
                 <a href={link} className="card__cover">
-                    <img src={poster} alt={title} />
+                    <img src={poster || '/img/poster-placeholder.png'} alt={title} />
                     <PlayIcon />
                 </a>
                 {user && onFavoriteToggle && <Favorite
